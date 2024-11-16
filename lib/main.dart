@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:one_stop_mnnit/pages/homepage.dart';
 
 void main() {
   runApp(const MainApp());
@@ -10,27 +11,20 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var themeData = ThemeData(
-      primarySwatch: const MaterialColor(
-        0xFF007D6E,
-        {
-          50: Color(0xFFE0F2F1),
-          100: Color(0xFFB2DFDB),
-          200: Color(0xFF80CBC4),
-          300: Color(0xFF4DB6AC),
-          400: Color(0xFF26A69A),
-          500: Color(0xFF009688),
-          600: Color(0xFF00897B),
-          700: Color(0xFF00796B),
-          800: Color(0xFF00695C),
-          900: Color(0xFF004D40),
-        },
-      ),
+      primaryColor: const Color(0xFF007D6E),
+      colorScheme: ColorScheme.light(secondary: const Color(0xFF007D6E)),
+      fontFamily: 'Montserrat',
     );
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: themeData,
       home: Scaffold(
-        body: Center(
-          child: Text('Hello Sansar!'),
+        appBar: AppBar(
+          title: const Text('One Stop MNNIT'),
+          centerTitle: true,
+        ),
+        body: SafeArea(
+          child: HomePage(),
         ),
       ),
     );
