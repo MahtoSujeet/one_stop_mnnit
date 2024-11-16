@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:one_stop_mnnit/pages/services.dart';
+import 'package:one_stop_mnnit/components/services.dart';
 import 'package:one_stop_mnnit/utils/verticalspace.dart';
 
 class HomePage extends StatelessWidget {
@@ -8,6 +8,10 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('One Stop MNNIT'),
+        centerTitle: true,
+      ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
         child: ListView(
