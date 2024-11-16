@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:one_stop_mnnit/pages/buy_sell/buy_sell_page.dart';
 
 class ServicesGrid extends StatelessWidget {
   const ServicesGrid({Key? key}) : super(key: key);
@@ -7,21 +9,19 @@ class ServicesGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.count(
       shrinkWrap: true,
-      crossAxisCount: 2,
+      crossAxisCount: 3,
       padding: const EdgeInsets.fromLTRB(5, 20, 5, 20),
       mainAxisSpacing: 16.0,
       crossAxisSpacing: 16.0,
       children: [
         ServiceButton(
           icon: Icons.shopping_cart,
-          label: 'Buy and Sell',
-          onTap: () {
-            // Navigate to buy and sell page
-          },
+          label: 'Buy & Sell',
+          onTap: () => Get.to(() => const BuySellPage()),
         ),
         ServiceButton(
           icon: Icons.search,
-          label: 'Lost and Found',
+          label: 'Lost & Found',
           onTap: () {
             // Navigate to lost and found page
           },
