@@ -1,33 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:one_stop_mnnit/models/BuySellItem.dart';
+import 'package:one_stop_mnnit/models/LostFoundItem.dart';
 
-class BuySellPage extends StatefulWidget {
-  const BuySellPage({super.key});
+class LostFoundPage extends StatefulWidget {
+  const LostFoundPage({super.key});
 
   @override
-  State<BuySellPage> createState() => _BuySellPageState();
+  State<LostFoundPage> createState() => _LostFoundPageState();
 }
 
-class _BuySellPageState extends State<BuySellPage>
+class _LostFoundPageState extends State<LostFoundPage>
     with SingleTickerProviderStateMixin {
-  late TabController _tabController;
+  late final TabController _tabController;
 
-  final List<Item> items = [
-    Item(
-      name: 'Textbook',
-      price: 500,
-      description: 'Engineering Mathematics textbook',
-      seller: 'John Doe',
+  final List<LostFoundItem> items = [
+    LostFoundItem(
+      name: 'Water Bottle',
+      description: 'Blue Milton bottle',
+      contact: 'John - 9876543210',
       image: "lib/assets/images/test.jpg",
-      isSelling: true,
+      location: 'Library',
+      date: DateTime.now(),
+      isLost: false,
     ),
-    Item(
-      name: 'Laptop',
-      price: 30000,
-      description: 'Dell Inspiron 15',
-      seller: 'Jane Smith',
+    LostFoundItem(
+      name: 'ID Card',
+      description: 'College ID Card',
+      contact: 'Jane - 9876543211',
       image: "lib/assets/images/test.jpg",
-      isSelling: false,
+      location: 'CSED Block',
+      date: DateTime.now(),
+      isLost: true,
     ),
   ];
 
@@ -47,22 +49,22 @@ class _BuySellPageState extends State<BuySellPage>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Buy & Sell'),
+        title: const Text('Lost & Found'),
         bottom: TabBar(
           controller: _tabController,
           tabs: const [
-            Tab(text: 'BUY', icon: Icon(Icons.shopping_cart)),
-            Tab(text: 'SELL', icon: Icon(Icons.sell)),
+            Tab(text: 'LOST ITEMS', icon: Icon(Icons.search)),
+            Tab(text: 'FOUND ITEMS', icon: Icon(Icons.check_circle)),
           ],
         ),
       ),
       body: TabBarView(
         controller: _tabController,
         children: [
-          // Buy Tab
-          _buildItemsList(false),
-          // Sell Tab
+          // Lost Items Tab
           _buildItemsList(true),
+          // Found Items Tab
+          _buildItemsList(false),
         ],
       ),
       floatingActionButton: FloatingActionButton(
@@ -74,9 +76,8 @@ class _BuySellPageState extends State<BuySellPage>
     );
   }
 
-  Widget _buildItemsList(bool isSelling) {
-    final filteredItems =
-        items.where((item) => item.isSelling == isSelling).toList();
+  Widget _buildItemsList(bool isLost) {
+    final filteredItems = items.where((item) => item.isLost == isLost).toList();
 
     return ListView.builder(
       itemCount: filteredItems.length,
@@ -96,15 +97,10 @@ class _BuySellPageState extends State<BuySellPage>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(item.description),
-                Text('Price: ₹${item.price}'),
-                Text('Seller: ${item.seller}'),
+                Text('Location: ${item.location}'),
+                Text('Date: ${item.date.toString().split(' ')[0]}'),
+                Text('Contact: ${item.contact}'),
               ],
-            ),
-            trailing: ElevatedButton(
-              onPressed: () {
-                // Contact seller logic
-              },
-              child: const Text('Contact'),
             ),
           ),
         );

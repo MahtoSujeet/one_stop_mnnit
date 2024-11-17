@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:one_stop_mnnit/components/services.dart';
-import 'package:one_stop_mnnit/utils/verticalspace.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

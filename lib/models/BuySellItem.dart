@@ -4,6 +4,7 @@ class Item {
   final String description;
   final String seller;
   final String image;
+  final bool isSelling;
 
   Item({
     required this.name,
@@ -11,5 +12,6 @@ class Item {
     required this.description,
     required this.seller,
     required this.image,
+    required this.isSelling,
   });
 }

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:one_stop_mnnit/pages/buy_sell/buy_sell_page.dart';
+import 'package:one_stop_mnnit/pages/lost_found/lost_found_page.dart';
 
 class ServicesGrid extends StatelessWidget {
-  const ServicesGrid({Key? key}) : super(key: key);
+  const ServicesGrid({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class ServicesGrid extends StatelessWidget {
           icon: Icons.search,
           label: 'Lost & Found',
           onTap: () {
-            // Navigate to lost and found page
+            Get.to(() => const LostFoundPage());
           },
         ),
         ServiceButton(
@@ -44,11 +45,11 @@ class ServiceButton extends StatelessWidget {
   final VoidCallback onTap;
 
   const ServiceButton({
-    Key? key,
+    super.key,
     required this.icon,
     required this.label,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
