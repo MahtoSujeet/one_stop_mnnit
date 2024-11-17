@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:one_stop_mnnit/pages/homepage.dart';
+import 'package:one_stop_mnnit/pages/homepage/homepage.dart';
 
 void main() {
   runApp(const MainApp());
