@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "987430945819",
+    "project_id": "one-stop-mnnit",
+    "storage_bucket": "one-stop-mnnit.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:987430945819:android:a39f93cc8345da8b3ae4be",
+        "android_client_info": {
+          "package_name": "com.mahto.onestopmnnit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0RHu-UK5lpJFQs78JLmenSDazpx918CQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
